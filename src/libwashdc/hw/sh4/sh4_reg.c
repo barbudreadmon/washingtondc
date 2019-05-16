@@ -671,10 +671,10 @@ static void sh4_mmucr_write_handler(Sh4 *sh4,
                                     sh4_reg_val val) {
     sh4->reg[SH4_REG_MMUCR] = val;
 
-    if (val & SH4_MMUCR_AT_MASK) {
-        error_set_feature("SH4 MMU support");
-        RAISE_ERROR(ERROR_UNIMPLEMENTED);
-    }
+    /* if (val & SH4_MMUCR_AT_MASK) { */
+    /*     error_set_feature("SH4 MMU support"); */
+    /*     RAISE_ERROR(ERROR_UNIMPLEMENTED); */
+    /* } */
 }
 
 static void

@@ -110,10 +110,6 @@ void sh4_mem_cleanup(Sh4 *sh4) {
                    addr <= SH4_IC_ADDR_ARRAY_LAST) {                    \
             sh4_icache_write_addr_array_##postfix(sh4, addr, val);      \
         } else {                                                        \
-            error_set_address(addr);                                    \
-            error_set_length(sizeof(val));                              \
-            error_set_feature("writing to part of the P4 memory region"); \
-            RAISE_ERROR(ERROR_UNIMPLEMENTED);                           \
         }                                                               \
     }
 
@@ -172,10 +168,7 @@ SH4_TRY_WRITE_P4_TMPL(double, double)
                      (int)addr, (int)sizeof(type), (int)sh4->reg[SH4_REG_PC]); \
             return 0;                                                   \
         } else {                                                        \
-            error_set_length(sizeof(type));                             \
-            error_set_address(addr);                                    \
-            error_set_feature("reading from part of the P4 memory region"); \
-            RAISE_ERROR(ERROR_UNIMPLEMENTED);                           \
+            return 0;                                                   \
         }                                                               \
     }
 

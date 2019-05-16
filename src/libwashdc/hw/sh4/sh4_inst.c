@@ -1165,10 +1165,10 @@ void sh4_inst_ldtlb(void *cpu, cpu_inst_param inst) {
 
     CHECK_INST(inst, INST_MASK_0000000000111000, INST_CONS_0000000000111000);
 
-    error_set_feature("opcode implementation");
-    error_set_opcode_format("0000000000111000");
-    error_set_opcode_name("LDTLB");
-    SH4_INST_RAISE_ERROR(sh4, ERROR_UNIMPLEMENTED);
+    /* error_set_feature("opcode implementation"); */
+    /* error_set_opcode_format("0000000000111000"); */
+    /* error_set_opcode_name("LDTLB"); */
+    /* SH4_INST_RAISE_ERROR(sh4, ERROR_UNIMPLEMENTED); */
 }
 
 #define INST_MASK_0000000000001001 0xffff
@@ -2025,10 +2025,10 @@ void sh4_inst_unary_trapa_disp(void *cpu, cpu_inst_param inst) {
     }
 #endif /* ifdef ENABLE_DEBUGGER */
 
-    error_set_feature("opcode implementation");
-    error_set_opcode_format("11000011iiiiiiii");
-    error_set_opcode_name("TRAPA #immed");
-    SH4_INST_RAISE_ERROR(sh4, ERROR_UNIMPLEMENTED);
+    /* error_set_feature("opcode implementation"); */
+    /* error_set_opcode_format("11000011iiiiiiii"); */
+    /* error_set_opcode_name("TRAPA #immed"); */
+    /* SH4_INST_RAISE_ERROR(sh4, ERROR_UNIMPLEMENTED); */
 }
 
 #define INST_MASK_0100nnnn00011011 0xf0ff
